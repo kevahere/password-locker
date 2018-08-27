@@ -31,3 +31,11 @@ class Credentials:
     @classmethod
     def display_credentials(cls):
         return cls.credentials_list
+
+    @classmethod
+    def copy_creds(cls,username):
+        creds_to_copy = Credentials.find_by_username(username)
+        pyperclip.copy(creds_to_copy)
+
+
+        ''' End of Class'''
