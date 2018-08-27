@@ -17,5 +17,15 @@ class Credentials:
     def delete_credentials(self):
         '''remove credentials from the list'''
         Credentials.credentials_list.remove(self)
+        # error (ValueError: list.remove(x): x not in list)
+
+    @classmethod
+    def credentials_exist(cls,username):
+        '''do these credentials exist?'''
+        for credentials in cls.credentials_list:
+            if credentials.username == username:
+                return credentials
+
+
 
 
