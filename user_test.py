@@ -11,15 +11,15 @@ class TestUser(unittest.TestCase):
         checking for proper user instantiation
         :return:
         '''
-        self.new_user = User("kevahere","3nd0fday5")
+        self.new_user = User("Kevin","Ahere")
 
     def test_init(self):
         '''
         checking for proper initialization
         :return:
         '''
-        self.assertEqual(self.new_user.username,"kevahere")
-        self.assertEqual(self.new_user.password,"3nd0fday5")
+        self.assertEqual(self.new_user.first_name,"Kevin")
+        self.assertEqual(self.new_user.last_name,"Ahere")
 
     def test_save_user(self):
         '''
@@ -42,7 +42,7 @@ class TestUser(unittest.TestCase):
         :return:
         '''
         self.new_user.save_user()
-        test_user = User("testahere","begin7h3day")
+        test_user = User("Kevinov","Aherestan")
         test_user.save_user()
 
         self.new_user.delete_user()
@@ -50,12 +50,12 @@ class TestUser(unittest.TestCase):
 
     def test_find_user(self):
         self.new_user.save_user()
-        test_user = User("testahere","begin7h3day")
+        test_user = User("Kevinov","Aherestan")
         test_user.save_user()
 
-        found_user = User.find_user("testahere")
+        found_user = User.find_user("Kevinov")
 
-        self.assertEqual(found_user.password,test_user.password)
+        self.assertEqual(found_user.last_name,test_user.last_name)
 
 if __name__ == '__main__':
     unittest.main()
