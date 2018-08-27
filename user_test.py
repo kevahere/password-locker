@@ -28,3 +28,22 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()
         self.assertEqual(len(User.user_list), 1)
+
+    def tearDown(self):
+        '''
+        emptys the list after running tests
+        :return:
+        '''
+        User.user_list = []
+
+    def test_delete_user(self):
+        '''
+        checking if users are deleted correctly
+        :return:
+        '''
+        self.new_user.save_user()
+        test_user = User("testahere","begin7h3day")
+        test_user.save_user()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list), 1)
