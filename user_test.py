@@ -56,3 +56,6 @@ class TestUser(unittest.TestCase):
         found_user = User.find_user("testahere")
 
         self.assertEqual(found_user.password,test_user.password)
+
+if __name__ == '__main__':
+    unittest.main()
