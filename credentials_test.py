@@ -34,6 +34,11 @@ class TestCredentials(unittest.TestCase):
         creds_exist = Credentials.credentials_exist("kevahere")
         self.assertTrue(creds_exist)
 
+    def test_display_credentials(self):
+        ''' can we see the credentials?'''
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
+
 
 if __name__ == '__main__':
     unittest.main()

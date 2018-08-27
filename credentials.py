@@ -24,8 +24,9 @@ class Credentials:
         '''do these credentials exist?'''
         for credentials in cls.credentials_list:
             if credentials.username == username:
-                return credentials
+                return True
+        return False
 
-
-
-
+    @classmethod
+    def display_credentials(cls):
+        return cls.credentials_list
