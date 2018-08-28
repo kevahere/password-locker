@@ -18,9 +18,10 @@ Used Python 3.6.0
 
 ## Features
 Users can:
-    * Login
-    * Save their credentials
-    * Generate new passwords
+
+    1. Login
+    2. Save their credentials
+    3. Generate new passwords
 
 ## Installation
 the project requires users to have python3.6+ installed.
