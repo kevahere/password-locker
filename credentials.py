@@ -1,4 +1,6 @@
 import pyperclip
+import string
+from random import *
 
 class Credentials:
     '''
@@ -6,7 +8,7 @@ class Credentials:
     '''
     credentials_list = []
 
-    def __init__(self,application,username,password):
+    def __init__(self, application, username, password):
         self.application = application
         self.username = username
         self.password = password
@@ -20,8 +22,17 @@ class Credentials:
         Credentials.credentials_list.remove(self)
         # error (ValueError: list.remove(x): x not in list)
 
+    def generate_password(self):
+        '''Function to generate a new password'''
+        min_char = 6
+        max_char = 12
+        allchar = string.ascii_letters + string.punctuation + string.digits
+        pwd= "".join(choice(allchar) for x in range(randint(min_char, max_char)))
+        print ("Your new password is: ")
+
+
     @classmethod
-    def credentials_exist(cls,username):
+    def credentials_exist(cls, username):
         '''do these credentials exist?'''
         for credentials in cls.credentials_list:
             if credentials.username == username:
@@ -30,12 +41,12 @@ class Credentials:
 
     @classmethod
     def display_credentials(cls):
-        return cls.credentials_list
+        for cred in cls.credentials_list:
+            return cred
 
     @classmethod
-    def copy_creds(cls,username):
+    def copy_creds(cls ,username):
         creds_to_copy = Credentials.find_by_username(username)
         pyperclip.copy(creds_to_copy)
 
-
-        ''' End of Class'''
+''' End of Class'''
