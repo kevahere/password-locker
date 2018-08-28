@@ -13,7 +13,9 @@ In progress
     PEP 8 compliant
 
 ## Tech and Frameworks used
-Used Pycharm community edition
+Used Pycharm community edition.
+Used Python 3.6.0
+
 ## Features
 Users can:
     * Login
